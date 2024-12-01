@@ -5,6 +5,8 @@
  *      Author: liv
  */
 
+#include "day1.h"
+
 #include <chrono>
 #include <string>
 #include <vector>
