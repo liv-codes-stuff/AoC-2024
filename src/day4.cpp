@@ -158,7 +158,7 @@ std::vector<std::tuple<std::string, std::pair<uint32_t, uint32_t>, std::pair<uin
 	return ret;
 }
 
-uint32_t task1(const std::vector<std::string> &input)
+static uint32_t task1(const std::vector<std::string> &input)
 {
 	std::vector<std::string> strings_to_check;
 
@@ -186,7 +186,7 @@ uint32_t task1(const std::vector<std::string> &input)
 	return std::transform_reduce(strings_to_check.cbegin(), strings_to_check.cend(), 0, std::plus{}, count_forward_reverse_xmas);
 }
 
-uint32_t task2(const std::vector<std::string> &input)
+static uint32_t task2(const std::vector<std::string> &input)
 {
 	std::vector<std::tuple<std::string, std::pair<uint32_t, uint32_t>, std::pair<uint32_t, uint32_t>>> diagonal;
 
