@@ -99,8 +99,8 @@ const uint64_t count_number_of_stones(uint64_t num, uint32_t act_depth, uint32_t
 	if(act_depth == max_depth)
 		return 1;
 
-	if(stone_cache.count(std::make_pair(num, act_depth+1)))
-		return stone_cache.at(std::make_pair(num, act_depth+1));
+	if(stone_cache.count(std::make_pair(num, act_depth)))
+		return stone_cache.at(std::make_pair(num, act_depth));
 	else
 	{
 		uint64_t res = 0;
@@ -118,13 +118,11 @@ const uint64_t count_number_of_stones(uint64_t num, uint32_t act_depth, uint32_t
 				uint64_t first_num = num / std::pow(10, num_len/2);
 				uint64_t second_num = num - (first_num * std::pow(10, num_len/2));
 
-				num = first_num;
-				uint64_t count = count_number_of_stones(num, ++act_depth, max_depth);
+				uint64_t count = count_number_of_stones(first_num, ++act_depth, max_depth);
 
-				//
-				num = second_num;
-				count += count_number_of_stones(num, act_depth, max_depth);
-				return count;
+				count += count_number_of_stones(second_num, act_depth, max_depth);
+				act_depth--;
+				res = count;
 			}
 			else
 			{
@@ -133,7 +131,7 @@ const uint64_t count_number_of_stones(uint64_t num, uint32_t act_depth, uint32_t
 			}
 		}
 
-		stone_cache[std::make_pair(num, act_depth+1)] = res;
+		stone_cache[std::make_pair(num, act_depth)] = res;
 		return res;
 	}
 }
