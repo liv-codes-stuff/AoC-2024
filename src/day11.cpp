@@ -52,8 +52,8 @@ static void do_a_blink(std::list<uint64_t> &input)
 		{
 			uint32_t num_len = static_cast<uint64_t>(std::log10(*it)) + 1;
 
-			uint64_t first_num = *it / std::pow(10, num_len/2);
-			uint64_t second_num = *it - (first_num * std::pow(10, num_len/2));
+			uint64_t first_num = *it / std::pow(10.0, (double) num_len/2);
+			uint64_t second_num = *it - (first_num * std::pow(10.0, (double) num_len/2));
 
 			*it = first_num;
 			it++;
