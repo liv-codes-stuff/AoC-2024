@@ -115,8 +115,8 @@ const uint64_t count_number_of_stones(uint64_t num, uint32_t act_depth, uint32_t
 			uint32_t num_len = static_cast<uint64_t>(std::log10(num)+1);
 			if(num_len % 2 == 0) // even number of digits
 			{
-				uint64_t first_num = num / std::pow(10, num_len/2);
-				uint64_t second_num = num - (first_num * std::pow(10, num_len/2));
+				uint64_t first_num = num / std::pow(10.0, (double) num_len/2);
+				uint64_t second_num = num - (first_num * std::pow(10.0, (double) num_len/2));
 
 				uint64_t count = count_number_of_stones(first_num, ++act_depth, max_depth);
 
