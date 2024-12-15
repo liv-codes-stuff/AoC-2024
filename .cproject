@@ -37,6 +37,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1491555852" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1812562384" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="tbb"/>
+									<listOptionValue builtIn="false" value="quadmath"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.471791705" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -98,6 +99,7 @@
 								<option id="gnu.cpp.link.option.flags.878272320" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.1658819913" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="tbb"/>
+									<listOptionValue builtIn="false" value="quadmath"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1743726820" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
