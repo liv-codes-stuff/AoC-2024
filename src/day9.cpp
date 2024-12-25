@@ -54,7 +54,7 @@ std::vector<int32_t> compact_array(const std::vector<int32_t> &in)
 {
 	std::vector<int32_t> ret = in;
 
-	for(auto it = ret.begin(); it != ret.end(); it++)
+	for(auto it = ret.begin(); it < ret.end(); it++)
 	{
 		if(*it == -1)
 		{
@@ -64,10 +64,13 @@ std::vector<int32_t> compact_array(const std::vector<int32_t> &in)
 			while(ret[ret.size()-1] == -1)
 				ret.pop_back();
 
-			int32_t file = ret[ret.size()-1];
-			ret.pop_back();
+			if(it < ret.end())
+			{
+				int32_t file = ret[ret.size()-1];
+				ret.pop_back();
 
-			*it = file;
+				*it = file;
+			}
 		}
 	}
 
@@ -147,7 +150,7 @@ void day9()
 
 	auto t1 = std::chrono::steady_clock::now();
 
-	input = read_file("day9_real_input.txt");
+	input = read_file("paula_day9_realinput.txt");
 
 	uint64_t task1_res = task1(input);
 	uint64_t task2_res = task2(input);
